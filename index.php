@@ -64,7 +64,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <script src="scripts.js"></script>
     <div class="container my-4">
-    <table class="table table-dark table-hover table-striped" id="student_table ">
+    <table class="table table-dark table-hover table-striped" id="student_table">
         <thead>
           <tr>
             <th scope="col">SNo.</th>
