@@ -13,7 +13,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="my_jquery_functions.js"></script>
        
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="css/bootstrap.css">     
    
   </head>
@@ -21,10 +20,10 @@
 
     <?php
     include 'dbcon.php';
+    include 'styles.php';
     if (isset($_POST['submit'])){
-        $n = mysqli_real_escape_string($con,$_POST['name']);
-        $e = mysqli_real_escape_string($con,$_POST['email_id']);
-    
+        $n = mysqli_real_escape_string($con,$_POST['na']);
+        $e = mysqli_real_escape_string($con,$_POST['email']);
         $emailquery = " select * from student where email='$e' ";
         $query = mysqli_query($con, $e);
         $emailcount = mysqli_num_rows($query);
@@ -111,13 +110,13 @@
     </div>
 
   <div class="container my-4" id = "form" >
-  <form action="" method="POST" onsubmit="event.preventDefault();onFormSubmit();">
+  <form action="post-method.php" method="POST" onsubmit="event.preventDefault();onFormSubmit();">
       <label for="name" class="form-label">Student Name</label>
-      <input type="name" name="name" class="form-control" id="name" required>
+      <input type="name" name = "na" class="form-control" id="name" required>
       <label for="email_id" class="form-label">E-mail ID</label>
-      <input type="email" name="email_id" class="form-control" id="email_id" required>
+      <input type="email"  name = "email" class="form-control" id="email_id" required>
       <div id = "btn">
-        <button type="submit" onclick="disappearForm();" class="btn btn-dark" name='submit'>DONE</button>
+        <button type="submit" name='submit' onclick="disappearForm();" class="btn btn-dark" >DONE</button>
       </div>
   </form>
 </div>
