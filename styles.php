@@ -1,9 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <style>
-            
-        
+        <style>   
 #edit {
     background-color: #7afd5f;
     color: rgb(0, 0, 0);
