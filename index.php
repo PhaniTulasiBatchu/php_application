@@ -22,21 +22,18 @@
     include 'dbcon.php';
     include 'styles.php';
     if (isset($_POST['submit'])){
-        $n = mysqli_real_escape_string($con,$_POST['na']);
-        $e = mysqli_real_escape_string($con,$_POST['email']);
+        $n = $_POST['na'];
+        $e = $_POST['email'];
         $emailquery = " select * from student where email='$e' ";
-        $query = mysqli_query($con, $e);
+        $query = mysqli_query($con, $emailquery);
         $emailcount = mysqli_num_rows($query);
         if($emailcount>0)
         {
           echo "email id already exists";
         }
         else{
-          $insertquery = "insert into student (student_name, email) values('$n','$e)";
-
-           $iquery = mysqli_query($con, $insertquery);
-
-           if($con)
+          $insertquery = "insert into student (student_name, email) values('$n','$e')";
+           if(mysqli_query($con, $insertquery))
            {
            ?>
              <script>
